@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welsh Technical Standards Board</title>
+    <link>https://standards.cymru/</link>
+    <description>Recent content on Welsh Technical Standards Board</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 18 Dec 2018 22:25:43 +0000</lastBuildDate>
+    
+	<atom:link href="https://standards.cymru/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WTSB December 2018: Drafting a statement of intent</title>
+      <link>https://standards.cymru/posts/2018-12-01-wtsb/</link>
+      <pubDate>Tue, 18 Dec 2018 22:25:43 +0000</pubDate>
+      
+      <guid>https://standards.cymru/posts/2018-12-01-wtsb/</guid>
+      <description>On the 18th December, the Welsh Technical Standards Board discussed how we might draft some broad principles and a statement of intent, setting out our broad approach, our ethos, our principles and how we were going to tackle the work we need to do to, in effect, sets the standards to enable us to build a truly open platform for health and care in Wales.
+Here is our draft statement of intent.</description>
+    </item>
+    
+    <item>
+      <title>WTSB September 2018: developing processes for standards in Wales</title>
+      <link>https://standards.cymru/posts/2018-09-27-wtsb/</link>
+      <pubDate>Thu, 27 Sep 2018 21:02:22 +0000</pubDate>
+      
+      <guid>https://standards.cymru/posts/2018-09-27-wtsb/</guid>
+      <description>Our September NHS Wales Technical Standards Board was held on the 27th September.
+We have been asked to identify, assess, set and assure technical principles and standards in NHS Wales. That means we need to build a catalogue of standards, including standards that are already in use as well as standards that should be used for new developments. We must recognise a need for pragmatism, so a catalogue must include not only information about that technical standard but how it should be implemented and used.</description>
+    </item>
+    
+    <item>
+      <title>WTSB June 2018: Adopting GDS principles and thinking about documentation</title>
+      <link>https://standards.cymru/posts/2018-06-19-wtsb/</link>
+      <pubDate>Tue, 19 Jun 2018 20:34:38 +0000</pubDate>
+      
+      <guid>https://standards.cymru/posts/2018-06-19-wtsb/</guid>
+      <description>We held the second meeting of the Welsh Technical Standards Board (WTSB) today and I am delighted to announce that we have formally adopted the GDS Design Principles for use by NHS Wales. These are:
+ Start with user needs Do less Design with data Do the hard work to make it simple Iterate. Then iterate again This is for everyone Understand context Build digital services, not websites Be consistent, not uniform Make things open: it makes things better  In addition, we have agreed to adopt the Welsh Government Digital Service Standard:</description>
+    </item>
+    
+    <item>
+      <title>Introducing the Welsh Technical Standards Board</title>
+      <link>https://standards.cymru/posts/introducing-wtsb/</link>
+      <pubDate>Tue, 15 May 2018 20:24:49 +0000</pubDate>
+      
+      <guid>https://standards.cymru/posts/introducing-wtsb/</guid>
+      <description>I am delighted to announce that I have been asked to chair the new Welsh Technical Standards Board (WTSB) for NHS Wales. We will support the creation and maintenance of a catalogue of standards and requirements to enable integration and interoperability across all health and care systems in a consistent and secure manner, and to support local innovation and the use of third party delivery partners.
+The scope of this Board covers:</description>
+    </item>
+    
+  </channel>
+</rss>
