@@ -6,10 +6,29 @@
     <description>Recent content on Welsh Technical Standards Board</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 18 Dec 2018 22:25:43 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Feb 2019 22:17:07 +0000</lastBuildDate>
     
 	<atom:link href="https://standards.cymru/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Meetings</title>
+      <link>https://standards.cymru/meetings/</link>
+      <pubDate>Sun, 10 Feb 2019 22:17:07 +0000</pubDate>
+      
+      <guid>https://standards.cymru/meetings/</guid>
+      <description> Dates of forthcoming meetings  Thursday 28 February – 14:00-17:00 Thursday 28 March – 14:00-17:00 Thursday 18 April – 09:00-12:00 Thursday 30 May – 09:30-12:30 Thursday 27 June – 14:00-17:00 Tuesday 23 July – 09:30-12:30 Tuesday 27 August – 09:30-12:30 Tuesday 24 September – 09:30-12:30 Tuesday 29 October – 09:30-12:30 Tuesday 26 November – 09:30-12:30 Tuesday 17 December – 09:30-12:30  </description>
+    </item>
+    
+    <item>
+      <title>Welsh Technical Standards Board</title>
+      <link>https://standards.cymru/about/</link>
+      <pubDate>Sun, 10 Feb 2019 21:07:36 +0000</pubDate>
+      
+      <guid>https://standards.cymru/about/</guid>
+      <description>Welsh Technical Standards Board (WTSB) Terms of Reference Purpose The purpose of the Welsh Technical Standards Board (WTSB ’ is to support the creation and maintenance of a catalogue of standards and requirements to enable integration and interoperability across all health and care systems in a consistent and secure manner, and to support local innovation and the use of third party delivery partners.
+The scope of this Board covers:</description>
+    </item>
     
     <item>
       <title>WTSB December 2018: Drafting a statement of intent</title>
