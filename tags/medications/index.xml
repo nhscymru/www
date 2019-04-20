@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Medications on Welsh Technical Standards Board</title>
+    <link>https://standards.cymru/tags/medications/</link>
+    <description>Recent content in Medications on Welsh Technical Standards Board</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 28 Mar 2019 14:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://standards.cymru/tags/medications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Electronic prescribing standards and statement of principles sign-off</title>
+      <link>https://standards.cymru/meetings/2019-03-28-agenda/</link>
+      <pubDate>Thu, 28 Mar 2019 14:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/meetings/2019-03-28-agenda/</guid>
+      <description> Minutes and Actions - Doc 1 Presentation from e-prescribing team Discussion ahead of NIMB – 11 April NIMB consideration of Statements of Principles - Doc 2 AOB  </description>
+    </item>
+    
+  </channel>
+</rss>

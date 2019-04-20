@@ -3,8 +3,68 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://standards.cymru/meetings/</loc>
-    <lastmod>2019-02-10T22:17:07+00:00</lastmod>
+    <loc>https://standards.cymru/meetings/2019-12-17-agenda/</loc>
+    <lastmod>2019-12-17T09:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-11-26-agenda/</loc>
+    <lastmod>2019-11-26T09:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-10-29-agenda/</loc>
+    <lastmod>2019-10-29T09:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-09-24-agenda/</loc>
+    <lastmod>2019-09-24T09:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-08-27-agenda/</loc>
+    <lastmod>2019-08-27T09:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-06-27-agenda/</loc>
+    <lastmod>2019-06-22T09:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-07-23-agenda/</loc>
+    <lastmod>2019-06-22T09:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-05-30-agenda/</loc>
+    <lastmod>2019-05-30T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-04-18-agenda/</loc>
+    <lastmod>2019-04-18T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-03-28-minutes/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-03-28-agenda/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-02-26-agenda/</loc>
+    <lastmod>2019-02-26T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/2019-02-26-notes/</loc>
+    <lastmod>2019-02-22T20:24:49+00:00</lastmod>
   </url>
   
   <url>
@@ -33,24 +93,48 @@
   </url>
   
   <url>
+    <loc>https://standards.cymru/posts/</loc>
+    <lastmod>2018-12-18T22:25:43+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://standards.cymru/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://standards.cymru/posts/</loc>
-    <lastmod>2018-12-18T22:25:43+00:00</lastmod>
+    <loc>https://standards.cymru/tags/drugs/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/tags/information-models/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/tags/medications/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/meetings/</loc>
+    <lastmod>2019-12-17T09:30:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://standards.cymru/tags/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://standards.cymru/</loc>
-    <lastmod>2019-02-10T22:17:07+00:00</lastmod>
+    <lastmod>2019-12-17T09:30:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
