@@ -43,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://standards.cymru/posts/2018-04-24-standards-culture/</loc>
+    <loc>https://standards.cymru/posts/2019-04-24-standards-culture/</loc>
     <lastmod>2019-04-24T04:04:04+00:00</lastmod>
   </url>
   
@@ -111,13 +111,7 @@
   </url>
   
   <url>
-    <loc>https://standards.cymru/tags/information-models/</loc>
-    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/tags/medications/</loc>
+    <loc>https://standards.cymru/tags/medication/</loc>
     <lastmod>2019-03-28T14:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -125,6 +119,12 @@
   <url>
     <loc>https://standards.cymru/meetings/</loc>
     <lastmod>2019-12-17T09:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/tags/pharmacy/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
