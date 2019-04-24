@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Welsh Technical Standards Board  | Modelling medications</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.54.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+    
+      <link href="https://standards.cymru/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Modelling medications" />
+<meta property="og:description" content="“When we set out to write software, we never know enough. Knowledge on the project is fragmented, scattered among many people and documents, and it’s mixed with other information so that we don’t even know which bits of knowledge we really need. Domains that seem less technically daunting can be deceiving: we don’t realize how much we don’t know. This ignorance leads us to make false assumptions.”
+Excerpt From: Eric Evans." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://standards.cymru/posts/2019-03-28-medications/" />
+<meta property="article:published_time" content="2019-03-28T12:20:19&#43;00:00"/>
+<meta property="article:modified_time" content="2019-03-28T12:20:19&#43;00:00"/><meta property="og:site_name" content="Welsh Technical Standards Board" />
+
+<meta itemprop="name" content="Modelling medications">
+<meta itemprop="description" content="“When we set out to write software, we never know enough. Knowledge on the project is fragmented, scattered among many people and documents, and it’s mixed with other information so that we don’t even know which bits of knowledge we really need. Domains that seem less technically daunting can be deceiving: we don’t realize how much we don’t know. This ignorance leads us to make false assumptions.”
+Excerpt From: Eric Evans.">
+
+
+<meta itemprop="datePublished" content="2019-03-28T12:20:19&#43;00:00" />
+<meta itemprop="dateModified" content="2019-03-28T12:20:19&#43;00:00" />
+<meta itemprop="wordCount" content="4310">
+
+
+
+<meta itemprop="keywords" content="medication,drugs,pharmacy," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Modelling medications"/>
+<meta name="twitter:description" content="“When we set out to write software, we never know enough. Knowledge on the project is fragmented, scattered among many people and documents, and it’s mixed with other information so that we don’t even know which bits of knowledge we really need. Domains that seem less technically daunting can be deceiving: we don’t realize how much we don’t know. This ignorance leads us to make false assumptions.”
+Excerpt From: Eric Evans."/>
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97389603-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://standards.cymru" class="f3 fw2 hover-white no-underline white-90 dib">
+      Welsh Technical Standards Board
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://standards.cymru/posts/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://standards.cymru/meetings/" title="Meetings page">
+              Meetings
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://standards.cymru/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://twitter.com/NHSWalesTech" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/nhscymru/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        
+      </p>
+      <h1 class="f1 athelas mb1">Modelling medications</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-03-28T12:20:19Z">March 28, 2019</time>   
+         
+      <span class="f6 mv4 dib tracked">- by Dr Mark Wardle</span>
+      
+      
+      
+        <span class="f6 mv4 dib tracked"> - 21 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 4310 words</span>
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<blockquote>
+<p>“When we set out to write software, we never know enough. Knowledge on the project is fragmented, scattered among many people and documents, and it’s mixed with other information so that we don’t even know which bits of knowledge we really need. Domains that seem less technically daunting can be deceiving: we don’t realize how much we don’t know. This ignorance leads us to make false assumptions.”</p>
+
+<p>Excerpt From: Eric Evans. “Domain-Driven Design: Tackling Complexity in the Heart of Software”. <a href="https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215">https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215</a></p>
+</blockquote>
+
+<p>I first need to say a big thank-you to the members of the WTSB for their input today . We had very useful discussions and I think we all learned a lot. This blog post reflect my personal notes and thoughts from the meeting; we will, of course, make more <a href="https://standards.cymru/meetings/2019-03-28">formal minutes of the discussion public once available</a>.</p>
+
+<h1 id="medicines-what-problems-are-we-trying-to-solve">Medicines : what problems are we trying to solve?</h1>
+
+<p>From a personal point-of-view, prescribing is one of the most dangerous things I do, and as a full-time clinician working in a hospital setting, I currently have few tools or technology to help me work efficiently and safely.</p>
+
+<p>So what kinds of work do we need to consider?</p>
+
+<ul>
+<li>writing prescriptions</li>
+<li>managing and ordering stock</li>
+<li>tracking administration of drugs, as required or as-scheduled.</li>
+<li>tracking medications used for clinical decision support, helping us solve the &ldquo;tell me who is taking methotrexate?&rdquo; problem</li>
+<li>sharing and exchange of information between care boundaries and better support of those processes</li>
+<li>understanding our interventions better, such as post-marketing surveillance, by combining medication data with other data such as outcomes</li>
+</ul>
+
+<p>The problems we face are:</p>
+
+<ul>
+<li>most hospital doctors in Wales have no support for e-prescribing, so we prescribe on paper.</li>
+<li>medicines information either doesn&rsquo;t exist in digital form, or exists in multiple systems and yet clearly impacts many different workflows, many of which are not digitised either.</li>
+<li>there is no single &lsquo;source of truth&rsquo; for &ldquo;current&rdquo; and &ldquo;past&rdquo; medications taken by a patient</li>
+<li>medication reconciliation between different systems frequently requires manual re-entry, even if both systems are digital, although often we would acknowledge checks when patients cross boundaries of care are usually appropriate (e.g. when a patient is admitted, we might stop the ACE inhibitor while they are dehydrated and septic - the actual need to re-enter or review each drug is a valuable opportunity to reflect on whether it should be continued).</li>
+</ul>
+
+<p>But digitisation of any process or workflow is not a panacea; we need to ensure that a complex intervention like this is an opportunity for learning - to study our efforts across different care environments and ensure what we do, at the technology level, is safe and effective. You might ask, isn&rsquo;t there already evidence like that? Not much, and historically healthcare information technology has been poor at rigorous evaluation and ongoing monitoring. For example, there are few robust evaluations of the advantages and disadvantages of e-prescribing and few &ldquo;lessons learnt&rdquo; open transparent discussions of the problems faced and the solutions used to overcome those issues.</p>
+
+<p>So, where are we in Wales so far?</p>
+
+<h2 id="wheppma">WHEPPMA</h2>
+
+<p>We welcomed <a href="https://www.rpharms.com/about-us/who-we-are/national-boards/welsh-national-pharmacy-board/cheryl-way">Cheryl Way</a>, national pharmacy and medicines management lead, to discuss technical standards relating to medicines.</p>
+
+<p>She presented on behalf of the NHS Wales&rsquo; <a href="http://www.wales.nhs.uk/nwis/page/97108">WHEPPMA team, Welsh Hospital Electronic Prescribing Pharmacy and Medicines Administration project</a> who are working on delivering the benefits of technology in prescribing and medicines management in Wales.</p>
+
+<p>This is their schematic representing the complexity of taking information about medicines and their management from multiple sources in order to help a user, whether patient or professional, understand what medications have been prescribed (and perhaps taken) by a patient:</p>
+
+<figure>
+    <img src="https://standards.cymru/posts/images/wheppma-medicines-flow.jpg"
+         alt="Medicines reconciliation across systems. Courtesy of the WHEPPMA team."/> <figcaption>
+            <p>Medicines reconciliation across systems. Courtesy of the WHEPPMA team.</p>
+        </figcaption>
+</figure>
+
+
+<p>What the schematic demonstrates well is that data relating to medicines currently exists in multiple software systems, such as medication records from general practice, the hospital pharmacy, and specialist prescribing such as chemotherapy. For example, I regularly issue outpatient prescriptions for drugs such as <em>mycophenolate</em> but that information is likely to be missing from the general practitioner record unless someone reads my letter and records that information manually!</p>
+
+<p>However, it is important not to misinterpret this schematic; it shows how a user might combine a list of medications from multiple sources in the context of direct care for an individual patient, but clearly, we need much more than that. Showing a list to an end-user is but one of our use-cases. We need to ensure that our medicines problems are framed correctly, because we risk making the wrong decisions if all we ask for is a view of data across different systems. It&rsquo;s akin to driving into a cul-de-sac when we need to get somewhere else.</p>
+
+<blockquote>
+<p>“Other projects use an iterative process, but they fail to build up knowledge because they don’t abstract. Developers get the experts to describe a desired feature and then they go build it. They show the experts the result and ask what to do next. If the programmers practice refactoring, they can keep the software clean enough to continue extending it, but if programmers are not interested in the domain, they learn only what the application should do, not the principles behind it. Useful software can be built that way, but the project will never arrive at a point where powerful new features unfold as corollaries to older features.”</p>
+
+<p>Excerpt From: Eric Evans. “Domain-Driven Design: Tackling Complexity in the Heart of Software”. <a href="https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215">https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215</a></p>
+</blockquote>
+
+<p>We need to truly understand our domain, and build a model of that domain - focused on its building blocks and underlying principles. That means understanding <em>data</em> and the workflows that operate using those data.</p>
+
+<h2 id="towards-structured-meaningful-data">Towards structured, meaningful data</h2>
+
+<p>As such, we must be careful not to build solutions that seemingly solve an immediate problem without a deep understanding of the domain. For example, we might simply create a solution to bring medicines together for display purposes but take us no further towards solving more ambitious problems such as clinical decision support that could, for example, highlight neutropenia in a patient with fever who has received recent chemotherapy.</p>
+
+<blockquote>
+<p>&ldquo;The heart of software is its ability to solve domain-related problems for its user. All other features, vital though they may be, support this basic purpose. When the domain is complex, this is a difficult task, calling for the concentrated effort of talented and skilled people. Developers have to steep themselves in the domain to build up knowledge of the business. They must hone their modeling skills and master domain design.&rdquo;</p>
+
+<p>Excerpt From: Eric Evans. “Domain-Driven Design: Tackling Complexity in the Heart of Software”. <a href="https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215">https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215</a></p>
+</blockquote>
+
+<p>Part of the solution is to create a shared information model; a model is representation of the real-world. All models are wrong, but some are useful and if different systems share those models then they can exchange information; we achieve semantic interoperability.</p>
+
+<h2 id="creating-information-models">Creating information models</h2>
+
+<p>We already have widely-used standards for medications - the <a href="https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/dictionary-medicines-and-devices-dmd">UK dm+d</a>, a dictionary of medicines and devices that is also available as a part of SNOMED CT. Using the dm+d, we can understand medicines, the ingredients that make up those medicines and the products available. In the USA, they use <a href="https://www.nlm.nih.gov/research/umls/rxnorm/">RxNorm</a>.</p>
+
+<p>However, simply recording a code from the dm+d (or RxNorm) is insufficient. What is the use of a list of medicines in isolation? In a paper record, how much use is a list of medications unless it is <em>contextualised</em>?</p>
+
+<p>How would we interpret a list of medications without any other information? Is it a list of medications:</p>
+
+<ul>
+<li>currently taken by the patient?</li>
+<li>prescribed for the patient?</li>
+<li>ones to be stopped at this encounter?</li>
+<li>ones to be started?</li>
+</ul>
+
+<p>and what about additional information such as:</p>
+
+<ul>
+<li>dose?</li>
+<li>timing?</li>
+<li>instructions on changes in any of these over time?</li>
+<li>the prescriber and the responsible clinician?</li>
+<li>the situational context of the instruction/administration?</li>
+</ul>
+
+<p>Our models relating to medication need to include all of this contextual information and carefully consider the <em>workflows</em> relating to medications, such as prescriptions (an order/request), how professionals patient or carers might record administration, how organisations (and individuals) manage stock ordering and control. In addition, we need to carefully consider the different clinical environments in which they are used such; are there significant differences between a general practitioner prescribing a week&rsquo;s course of an antibiotic, an infusion prescribed on the intensive care unit, or a chemotherapeutic agent prescribed as part of a wider protocol?</p>
+
+<blockquote>
+<p>“The key to controlling complexity is a good domain model, a model that goes beyond a surface vision of a domain by introducing an underlying structure, which gives the software developers the leverage they need. A good domain model can be incredibly valuable, but it’s not something that’s easy to make. Few people can do it well, and it’s very hard to teach.”</p>
+
+<p>Martin Fowler, excerpt from preface in Eric Evans&rsquo; “Domain-Driven Design: Tackling Complexity in the Heart of Software”. <a href="https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215">https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215</a></p>
+</blockquote>
+
+<h2 id="the-seductive-single-system-solution-ssss">The seductive single system solution (SSSS)</h2>
+
+<p>It is easy, when faced with this complexity, to think we can solve our problems by buying a &lsquo;single system&rsquo; and making it available in all clinical contexts, perhaps by embedding a view of that system from another in a rectangle on the screen. Indeed, perhaps such as approach helps to standardise the user interface which might have important patient safety benefits? Perhaps, but:</p>
+
+<ul>
+<li><p>we will never have a single &lsquo;system&rsquo;; we will always need to exchange data between software across our complex enterprises</p>
+
+<ul>
+<li>e.g. how could that possibly work for patient/carer facing applications, e.g. epilepsy drug reminder applications?</li>
+<li>e.g. who is to say that the best way of prescribing drugs on the ward is the same as prescribing chemotherapy regimens? Isn&rsquo;t some variation appropriate?</li>
+</ul></li>
+
+<li><p>we do not yet know the <em>best</em> way to valuably use technology to improve our work here. We only need to consider the widely discussed <a href="https://psnet.ahrq.gov/primers/primer/28/alert-fatigue">&lsquo;alert fatigue&rsquo;</a> to recognise the importance of ensuring that we use technology to build a <em>learning</em> culture of continuous improvement.</p></li>
+
+<li><p>we need to be very cautious unless this is this a &lsquo;solved problem&rsquo;, for which the answers are well-understood, and the market providing solutions which have become commodities and essentially substitutable.</p></li>
+
+<li><p>do we really think that medications can be handled by a standalone application on behalf of all others? How are we going to add analytics and integration with other sources of information (e.g how do we solve &ldquo;send an alert if there if there is a problem with blood monitoring results for patients on methotrexate&rdquo;)</p></li>
+
+<li><p>in short, are we going to impede innovation and ongoing improvement?</p></li>
+</ul>
+
+<p>And what about the purported benefits to safety and training?</p>
+
+<ul>
+<li>we can mitigate these issues by defining standards for display and workflow relating to drugs (e.g. show full names and no abbreviations for dose timings) without impeding innovation (and recognise that design is likely to be quite different for small mobile devices compared to a desktop display).</li>
+</ul>
+
+<p>The biggest issue with the &lsquo;seductive single system solution&rsquo; is that embedding another application, with its own user interface, business logic, data models and storage, results in a potential combinatorial explosion of different systems which need to be integrated point-to-point to support processes and workflow.</p>
+
+<h2 id="simplifying-complexity">Simplifying complexity</h2>
+
+<p>The answer is, I think, to simplify and break down our work.</p>
+
+<p>We need:</p>
+
+<ul>
+<li>a deep understanding of the problems we want to solve, now and in the near future</li>
+<li>to build models - think in terms of meaningful structured data and the operations/processes that use them, and explicitly model state, making other data stateless and immutable. Turning implicit tacit knowledge into explicit models is vital.</li>
+<li>to work to sound architectural principles, separating our enterprise into dependent but separate tiers relating to
+
+<ul>
+<li>user interface</li>
+<li>application layer</li>
+<li>domain layer (our domain models and business rules)</li>
+<li>infrastructure layer</li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p>&ldquo;A model is an abstraction of the real-world distilling knowledge into core concepts and processes. A model is a careful balance between complexity and over-simplification with models that are too complex providing brittle abstractions which are poorly generalisable and models that are too simple not supporting all of the demands placed upon it in real-life clinical scenarios.&rdquo;</p>
+
+<p>Mark Wardle, <a href="https://wardle.org/clinical-informatics/2017/02/03/domain-driven-design.html">&ldquo;Towards a domain-driven, model-based approach to developing clinical information systems: innovating for the future in NHS Wales&rdquo;</a>, February 2017</p>
+</blockquote>
+
+<p>In essence, we are looking for <em>&lsquo;goldilocks models&rsquo;</em>, not too complex (brittle), not too simple (not useful).</p>
+
+<p>The key results from this approach are:</p>
+
+<ul>
+<li>loose-coupling between components across the enterprise, permitting those components to be developed semi-independently and in parallel, improving productivity and efficiency and fostering innovation when appropriate.</li>
+<li>a need for shared, coherent information models.</li>
+<li>a move from tacit implicit rules to explicit declaration; we gain understanding of our domain.</li>
+</ul>
+
+<p>Loose-coupling works because the teams agree a set of technical and operational contracts (usually application programming interfaces) so that each party understands both their obligations and entitlements from other parties.</p>
+
+<p>We achieve exponential gains in productivity if we open up those contracts to multiple parties, via the use of open published standards. In this way, we define the technical standards that permit the exchange of meaningful information and ensure that the parties do not necessarily need to engage directly with each other; operate according to the standards and your team can make use of work from another without constant interactions between those teams.</p>
+
+<p>Without standards, parties must engage directly with one another resulting in a combinatorial explosion and a brittle, difficult to change architecture.</p>
+
+<p>An example of the use of standards to connect disparate software is the operation of your web browser. The developers of that browser do not know the people who created the individual websites with which you interact, but instead, because of open standards, their software can exchange meaningful information with the software running on the server.</p>
+
+<h2 id="information-models-for-medication">Information models for medication</h2>
+
+<p>So we can see that an information model for a medication might need to include:</p>
+
+<ul>
+<li>the medication - coded so that, for example, we can determine the class of drug - and determine that amlodipine is a calcium channel blocker</li>
+<li>the dose</li>
+<li>the dosing schedule (e.g. three-times-daily)</li>
+<li>the route of administration</li>
+<li>duration for which the drug should be used</li>
+<li>other dispensing information - e.g. drug is intended to be used forever, but we&rsquo;re going to supply for next three months.</li>
+<li>a record of the drug&rsquo;s administration, particularly in hospital and care home settings but an absence of this information does not necessarily mean the drug was not given in other care settings such as the patient&rsquo;s home. In that situation, other information relating to whether drugs are taken, occasionally missed or not taken might need to be recorded in the record.</li>
+</ul>
+
+<p>It&rsquo;s important to understand the situations in which information models containing this kind of information might be used. To do that, it might be helpful to consider the admission of a patient into hospital as an emergency and how a record of a drug and other relevant information might be needed.</p>
+
+<p>Where might we need to record or find information about medication?</p>
+
+<ul>
+<li>A statement - the medication list as told/recorded</li>
+<li>An order - prescribing medications</li>
+<li>Dispensing - providing medications</li>
+<li>Administration - giving medications</li>
+</ul>
+
+<h3 id="medication-statement">Medication statement</h3>
+
+<p>We will need a statement of the medications taken by a patient at a snapshot in time. For example, we might ascertain a list when we first meet a patient. Such a step will always be needed, even in the unlikely event that all professionals involved in the care of that patient use the same electronic system, in case the patient has discontinued a drug or started a new over-the-counter remedy.</p>
+
+<p>That&rsquo;s not to say that software cannot help this important reconciliation and review step; a list of medications could be presented for review sourced from all authoritative sources in order to improve safety and efficiency.</p>
+
+<h3 id="an-order-prescribing-medications">An order - prescribing medications</h3>
+
+<p>We need to be able to request medication; a medication order, in which a prescriber orders medication for a patient. This is akin to prescribing on a paper chart, after writing down the list of medications during the process of admitting a patient to hospital. So which list should be the authoritative source of medications that should be prescribed?
+Once we have decided what to prescribe, those drugs need to be prescribed and those instructions need to be recorded in an appropriate information model.</p>
+
+<h3 id="dispensing-providing-medications">Dispensing - providing medications</h3>
+
+<p>When a medication is prescribed on a ward, a complex set of processes begin. Is the drug stocked on the ward? Does it need to be ordered from pharmacy? Has the patient brought in their own medication? Such information needs to handle the dispensing of the medication to the appropriate location, linking with stock ordering and control systems.</p>
+
+<h3 id="administration-giving-medications">Administration - giving medications</h3>
+
+<p>When a medication is given by a professional to a patient, such as an intravenous infusion, that process also needs to be recorded appropriately, or a reason for its non-administration recorded.</p>
+
+<h2 id="process-workflow-models-for-medication">Process / workflow models for medication</h2>
+
+<p>In essence, the medication statement is akin to the list of medications written down on paper during a hospital admission. When using paper, lists of medications might appear in a letter from the primary care physician, and in numerous duplicate places during admission and subsequent assessment; by nursing, medical staff as well as documents recorded by allied health professionals. At the moment, a single piece of paper cannot be in more than two places at the same time, so that means duplication and redundancy. Which is the &lsquo;truth&rsquo;? The record by the doctor or the nurse in the emergency department, the ward nurse, or the specialist doctor, or none of the above?</p>
+
+<p>From an informatics point-of-view, the inherent implicit redundancy is fascinating, particularly when we consider how to digitise the process. In effect, digitisation should force us to start to unpick and understand our processes, breaking them into their core steps and allowing us to re-imagine those processes given the tools we now have available to us.</p>
+
+<p>To be successful, we need to:</p>
+
+<ul>
+<li>make tacit, implicit rules explicit</li>
+<li>handle the contradictions and oddities that have evolved in our &lsquo;systems&rsquo;</li>
+</ul>
+
+<p>and recognise that many of our tacit rules and oddities have arisen as a result of the strengths and limitations inherent in our use of <em>paper</em>.</p>
+
+<p>We can see, even with a very simple analysis, how we use, manage, record and process medications for patients is complex.</p>
+
+<p>Many of the workflows are quite standardised between different care environments, but others are highly variable. It is useful to consider the &lsquo;edge-cases&rsquo;; in healthcare, <em>edge-cases are common</em>.</p>
+
+<p>Consider the differences between the following clinical environments:</p>
+
+<ul>
+<li>prescribing and administration on the intensive care unit vs. nursing home resident</li>
+<li>chemotherapy prescribing vs. regular repeated medication prescriptions for long-term health conditions</li>
+<li>emergency unit prescribing vs. a palliative care plan</li>
+</ul>
+
+<blockquote>
+<p>“It is with this move beyond entities and values that knowledge crunching can get intense, because there may be actual inconsistency among business rules. Domain experts are usually not aware of how complex their mental processes are as, in the course of their work, they navigate all these rules, reconcile contradictions, and fill in gaps with common sense. Software can’t do this. It is through knowledge crunching in close collaboration with software experts that the rules are clarified, fleshed out, reconciled, or placed out of scope.”</p>
+
+<p>Excerpt From: Eric Evans. “Domain-Driven Design: Tackling Complexity in the Heart of Software”. <a href="https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215">https://www.amazon.co.uk/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215</a></p>
+</blockquote>
+
+<h2 id="what-standards-already-exist">What standards already exist?</h2>
+
+<p>HL7 FHIR supports a range of information models for medication:</p>
+
+<ul>
+<li><a href="https://www.hl7.org/fhir/medicationstatement.html">A medication statement</a>.</li>
+<li><a href="https://www.hl7.org/fhir/medicationrequest.html">A medication request (order)</a></li>
+<li><a href="https://www.hl7.org/fhir/medicationdispense.html">A provision/supply of a medication - a medication &lsquo;dispense&rsquo;</a></li>
+<li><a href="https://www.hl7.org/fhir/medicationadministration.html">A medication administration</a></li>
+</ul>
+
+<blockquote>
+<p>&ldquo;The philosophy behind FHIR is to build a base set of resources that, either by themselves or when combined, satisfy the majority of common use cases. FHIR resources aim to define the information contents and structure for the core information set that is shared by most implementations. There is a built-in extension mechanism to cover the remaining content as needed.&rdquo;</p>
+
+<p><a href="https://www.hl7.org/fhir/overview.html">https://www.hl7.org/fhir/overview.html</a></p>
+</blockquote>
+
+<p>openEHR also provides a wide range of models for medication.</p>
+
+<ul>
+<li><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.652">A medication summary (essentially a statement as above)</a></li>
+<li><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.817">A medication request (order)</a></li>
+<li><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.399">Medication management archetype</a></li>
+<li><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.540">Medication supply</a></li>
+<li><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.652">Medication summary</a></li>
+<li><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.3">A medication item</a></li>
+<li><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.349">A medication list</a></li>
+</ul>
+
+<p>openEHR defines a core reference model into which archetypes, user-defined information models, can exist in different contexts. For interoperability, distributed computer software must use the same archetype definitions, and there are collaboration tools available that support that process.</p>
+
+<p>My view is that we must, as a community, work to standardise our approach to information models and the reference model in which they sit. In the majority of cases, the hard work is that collaborative, human work rather than the technical factors. I don&rsquo;t really care how those data are persisted, but only that I can make use of those data.</p>
+
+<h2 id="computability">Computability</h2>
+
+<p>What is the point of recording information unless we can make use of it?</p>
+
+<p>That means structuring information so that we can build software to support workflow and process relating to medication; that means software gaining understanding of <em>what</em> data <em>means</em>.</p>
+
+<p>In my opinion, it is easier to write software that processes data as a FHIR resource because it is mostly explicit and  developer-orientated. While I love the two-level modelling paradigm in openEHR, software cannot always simply handle archetypes in a generic way. The openEHR architectural review recognises this issue:</p>
+
+<blockquote>
+<p>&ldquo;Clearly applications cannot always be totally generic (although many data capture and viewing applications are); decision support, administrative, scheduling and many other applications still require custom engineering. However, all such applications can now rely on an archetype- and template driven computing platform. A key result of this approach is that archetypes now constitute a technology- independent, single-source expression of domain semantics, used to drive database schemas, software logic, GUI screen definitions, message schemas and all other technical expressions of the semantics.&rdquo;</p>
+
+<p><a href="https://specifications.openehr.org/releases/BASE/Release-1.0.3/architecture_overview.html#_consequences_for_software_engineering">openEHR architectural review</a></p>
+</blockquote>
+
+<p>There are ways of handling these issues, but both openEHR and HL7 FHIR can also make computability more difficult by being <em>too flexible</em> on their use of coding and ontology. That means that both usually fail to specify explicitly which coding system to use, recognising the need for flexibility in usage across territories and environments. Both <em>bind</em> terminologies in a flexible manner.</p>
+
+<p>From the openEHR medication archetype:</p>
+
+<blockquote>
+<p>NAME: The name of the medication or medication component.</p>
+
+<p>Comment: For example: &lsquo;Zinacef 750 mg powder&rsquo; or &lsquo;cefuroxim&rsquo;. This item should be coded if possible, using for example, RxNorm, DM+D, Australian Medicines Terminology or FEST. Usage of this element will vary according to context of use. This element may be omitted where the name of the medication is recorded in the parent INSTRUCTION or ACTION archetype, and this archetype is only used to record that the form must be or was &lsquo;liquid&rsquo;.</p>
+
+<p><a href="https://ckm.apperta.org/ckm/#showArchetype_1051.32.352">https://ckm.apperta.org/ckm/#showArchetype_1051.32.352</a></p>
+</blockquote>
+
+<p>From the HL7 FHIR medication model:</p>
+
+<blockquote>
+<p>Medication.code</p>
+
+<p>Definition: A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.</p>
+
+<p><a href="https://www.hl7.org/fhir/medication-definitions.html#Medication.code">https://www.hl7.org/fhir/medication-definitions.html#Medication.code</a></p>
+</blockquote>
+
+<p>This flexibility is both a strength and a weakness. In order to be interoperable, we need to be opinionated on how such terms are coded. I will not be able to exchange meaningful information with you, and use that information for computation, if I expect SNOMED CT dm+d codes and you expect RxNorm, even if we both use HL7 FHIR.</p>
+
+<h3 id="profiling">Profiling</h3>
+
+<p>The suggested solution is <em>profiling</em>; this is a process in which a generic model from the platform standard is adapted to specific use-cases. For example, the UK INTEROpen project has profiled medications so that medication code must be a <a href="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Medication-1">SNOMED CT code from the dm+d</a>, which is appropriate the UK audience.</p>
+
+<p>The problem with profiling is that we <em>still</em> need to agree across borders how we will adapt our models for local implementation, and this applies to both HL7 FHIR and openEHR. That means building in cooperation and collaboration - across all organisations in health and care, inside and outside, of Wales. We must align those profiles with our partner organisations in order to appropriately exchange meaningful information relating to medication and manage workflows across organisational boundaries.</p>
+
+<h1 id="conclusions">Conclusions</h1>
+
+<ul>
+<li>we need a deep understanding of our domain and the workflows/processes that are involved in medications</li>
+<li>in general, the technical aspects are <em>not</em> the difficult bit - and there is considerable alignment between models in HL7 FHIR and openEHR already.</li>
+<li>technical standards are <em>not</em> something that can be defined separately to the business of solving problems; indeed, standards are a key foundation in empowering cultural change and digital transformation, and that is everyone&rsquo;s business.</li>
+<li>work on technical standards must be done in <em>partnership</em> and <em>collaboration</em>, across health and care, involving internal and external stakeholders, inside and outside of Wales.</li>
+<li>we need to build links with our partners and create a <em>learning culture</em>.</li>
+<li>our adoption of technical standards will need continual work and ongoing maintenance and review.</li>
+</ul>
+
+<p>And specifically in Wales,</p>
+
+<ul>
+<li>we must ensure appropriate technical standards are mandated for new information systems dealing with medications and their management; the WHEPPMA project should be explicit in adopting a standards-based approach.</li>
+<li>we must provide a strong steer to our industry partners that we are moving to a non-proprietary open standards-based approach to medications (and health and care information systems in general)</li>
+<li>we must work with colleagues in other nations and specifically ensure adequate representation for Wales in standards organisations, for example NHS Digital, NHSX and INTEROpen, to align information and process models.</li>
+<li>we should move towards an <em>open platform</em>, in which data and the applications that use those data are separate and connected via defined open application programming interfaces.</li>
+<li>in principle, we would adopt HL7 FHIR for exchanging information relating to medications.</li>
+</ul>
+
+<p>And we should ask:</p>
+
+<ul>
+<li>what can we do now that ensures rigorous evaluation and monitoring of our technology deployments, and be more open and transparent in explaining what learn in solving the problems we face in health and care information technology?</li>
+</ul>
+
+<p><em>Mark</em></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://standards.cymru/tags/medication" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">medication</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://standards.cymru/tags/drugs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">drugs</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://standards.cymru/tags/pharmacy" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">pharmacy</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+  
+  
+    <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+      <p class="f5 b mb3">What&#39;s in this post</p>
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#medicines-what-problems-are-we-trying-to-solve">Medicines : what problems are we trying to solve?</a>
+<ul>
+<li><a href="#wheppma">WHEPPMA</a></li>
+<li><a href="#towards-structured-meaningful-data">Towards structured, meaningful data</a></li>
+<li><a href="#creating-information-models">Creating information models</a></li>
+<li><a href="#the-seductive-single-system-solution-ssss">The seductive single system solution (SSSS)</a></li>
+<li><a href="#simplifying-complexity">Simplifying complexity</a></li>
+<li><a href="#information-models-for-medication">Information models for medication</a>
+<ul>
+<li><a href="#medication-statement">Medication statement</a></li>
+<li><a href="#an-order-prescribing-medications">An order - prescribing medications</a></li>
+<li><a href="#dispensing-providing-medications">Dispensing - providing medications</a></li>
+<li><a href="#administration-giving-medications">Administration - giving medications</a></li>
+</ul></li>
+<li><a href="#process-workflow-models-for-medication">Process / workflow models for medication</a></li>
+<li><a href="#what-standards-already-exist">What standards already exist?</a></li>
+<li><a href="#computability">Computability</a>
+<ul>
+<li><a href="#profiling">Profiling</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+</nav>
+    </div>
+  
+  
+  
+  
+    <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+      <p class="f5 b mb3">Related</p>
+      <ul class="pa0 list">
+         
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-03-28/">Electronic prescribing standards and statement of principles sign-off</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-02-26/">Statement of intent, community integration and work plans</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-05-30/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-04-18/index./">Virtual meeting to draft letter following statement of principles</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-11-26/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-07-23/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-12-17/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-10-29/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-08-27/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-09-24/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-06-27/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/posts/2018-12-01-wtsb/">A statement of principles</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/posts/2018-09-27-wtsb/">Developing processes for managing standards in Wales</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/posts/2018-06-19-wtsb/">Adopting GDS principles and thinking about documentation</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/posts/introducing-wtsb/">Introducing the Welsh Technical Standards Board</a>
+          </li>
+          
+      </ul>
+  </div>
+  
+  </aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://standards.cymru" >
+    &copy; 2019 Maintained by Mark Wardle for the Welsh Technical Standards Board
+  </a>
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="mailto:mark@wardle.org">
+    mark@wardle.org
+  </a>
+    <div>
+      
+
+
+
+<a href="https://twitter.com/NHSWalesTech" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/nhscymru/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+    </div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://standards.cymru/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -20,5 +20,15 @@
       <description> Agenda  Minutes and Actions from February meeting - see link or Document 1 in bundle Presentation from e-prescribing team Discussion ahead of National Informatics Management Board (NIMB) – 11 April NIMB consideration of Statements of Principles - Doc 2 Any other business  </description>
     </item>
     
+    <item>
+      <title>Modelling medications</title>
+      <link>https://standards.cymru/posts/2019-03-28-medications/</link>
+      <pubDate>Thu, 28 Mar 2019 12:20:19 +0000</pubDate>
+      
+      <guid>https://standards.cymru/posts/2019-03-28-medications/</guid>
+      <description>“When we set out to write software, we never know enough. Knowledge on the project is fragmented, scattered among many people and documents, and it’s mixed with other information so that we don’t even know which bits of knowledge we really need. Domains that seem less technically daunting can be deceiving: we don’t realize how much we don’t know. This ignorance leads us to make false assumptions.”
+Excerpt From: Eric Evans.</description>
+    </item>
+    
   </channel>
 </rss>
