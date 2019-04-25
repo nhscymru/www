@@ -75,12 +75,13 @@
     </item>
     
     <item>
-      <title></title>
+      <title>Focusing on developers</title>
       <link>https://standards.cymru/meetings/2019-05-30/</link>
       <pubDate>Thu, 30 May 2019 09:00:00 +0000</pubDate>
       
       <guid>https://standards.cymru/meetings/2019-05-30/</guid>
-      <description>Agenda Standards for developers To be confirmed</description>
+      <description> Review of minutes from March meeting and sign-off to publish on website. Review of action log. Review of website and its backend technology including github.com code and potential (Mark Wardle) Presentation on existing development practices in Wales (Rob Jones / Huw Angle on behalf of Geoff Norton, NWIS software development manager) Review of current ecosystem developer view and presentation from Paul Howells/Helen Northmore on DHEW/ecosystem.  Invited:
+ WTSB members Helen Northmore Catrin Rees Paul Howells Huw Angle selected health board developers (tbc)  </description>
     </item>
     
     <item>
@@ -111,12 +112,59 @@
     </item>
     
     <item>
+      <title>Electronic observations</title>
+      <link>https://standards.cymru/meetings/2018-11-21/</link>
+      <pubDate>Thu, 22 Nov 2018 09:30:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/meetings/2018-11-21/</guid>
+      <description> Minutes and Actions - Doc 1 Summary of e-Observations work and INTERopen FHIR profiling Review of the Standards Process: https://wardle.org/wales/2018/10/07/wtsb.html ADT standards Interoperability framework Doc 2 Outline for standards catalogue Doc 3 AOB   </description>
+    </item>
+    
+    <item>
+      <title>Processes for standards evaluation</title>
+      <link>https://standards.cymru/meetings/2018-09-27/</link>
+      <pubDate>Thu, 27 Sep 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/meetings/2018-09-27/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Standards assessments</title>
+      <link>https://standards.cymru/meetings/2018-08-28/</link>
+      <pubDate>Tue, 28 Aug 2018 09:30:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/meetings/2018-08-28/</guid>
+      <description> Welcome &amp;amp; introductions Action Log Technical Standard assessment - draft process &amp;amp; templates:  Process flow Request template Assessment template Outcome template  Technical Standards Catalogue – what information should it contain? Forward Workplan:  Template plan Upcoming standards  AOB  </description>
+    </item>
+    
+    <item>
+      <title>Processes in Welsh Information Standards Board</title>
+      <link>https://standards.cymru/meetings/2018-07-17/</link>
+      <pubDate>Tue, 17 Jul 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/meetings/2018-07-17/</guid>
+      <description> Welcome &amp;amp; introductions Action Log - Doc 1 WISB information standards development process - Rebecca Cook WTSB processes and templates – discussion External Groups and WTSB Developer portal for Wales mock-up AOB   </description>
+    </item>
+    
+    <item>
       <title>Terms of reference / developers / GDS</title>
       <link>https://standards.cymru/meetings/2018-06-19/</link>
       <pubDate>Tue, 19 Jun 2018 10:00:00 +0000</pubDate>
       
       <guid>https://standards.cymru/meetings/2018-06-19/</guid>
       <description>Welcome &amp;amp; introductions Action Log - Doc 1 Updated Terms of Reference for sign off - Doc 2 Discussion relating a developer/standards portal e.g. https://developer.wales.nhs.uk or https://standards.cymru Current Standards in use across NHS Wales – Rob Jones, Doc 3a,b,c Proposed standards for consideration, Doc 4a,b  GDS Design Principles GDS Service Standards e-Observations  NHS Wales System Architecture Review - Doc 5 AOB  Date of next meeting: 10:00-12:30 - 17th July</description>
+    </item>
+    
+    <item>
+      <title>Inaugural meeting</title>
+      <link>https://standards.cymru/meetings/2018-05-22/</link>
+      <pubDate>Tue, 22 May 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/meetings/2018-05-22/</guid>
+      <description> Welcome &amp;amp; introductions Terms of Reference and membership - Doc 1 How the Board will function - outputs - Doc 2 (copy of NIMB paper) Proposed technical standards for consideration
+ INTEROPen and membership of other relevant groups
+ AOB   </description>
     </item>
     
   </channel>
