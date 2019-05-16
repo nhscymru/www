@@ -126,6 +126,15 @@ Excerpt From: Eric Evans.</description>
     </item>
     
     <item>
+      <title>Medication</title>
+      <link>https://standards.cymru/standards/medication/</link>
+      <pubDate>Thu, 28 Mar 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/standards/medication/</guid>
+      <description>At the meeting of WTSB on 28th March 2019, we agreed that structured medication data should adopt the HL7 FHIR medication standards, with profiles aligned with the medication profiles from NHS England and INTEROpen. Further information can be found in the associated blog post from this meeting.</description>
+    </item>
+    
+    <item>
       <title>Statement of intent, community integration and work plans</title>
       <link>https://standards.cymru/meetings/2019-02-26/</link>
       <pubDate>Tue, 26 Feb 2019 14:00:00 +0000</pubDate>

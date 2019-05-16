@@ -6,10 +6,19 @@
     <description>Recent content in Approved on Welsh Technical Standards Board</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 18 Dec 2018 22:25:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 09:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://standards.cymru/status/approved/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Medication</title>
+      <link>https://standards.cymru/standards/medication/</link>
+      <pubDate>Thu, 28 Mar 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/standards/medication/</guid>
+      <description>At the meeting of WTSB on 28th March 2019, we agreed that structured medication data should adopt the HL7 FHIR medication standards, with profiles aligned with the medication profiles from NHS England and INTEROpen. Further information can be found in the associated blog post from this meeting.</description>
+    </item>
     
     <item>
       <title>A statement of principles</title>

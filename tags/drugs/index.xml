@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Drugs on Welsh Technical Standards Board</title>
+    <title>drugs on Welsh Technical Standards Board</title>
     <link>https://standards.cymru/tags/drugs/</link>
-    <description>Recent content in Drugs on Welsh Technical Standards Board</description>
+    <description>Recent content in drugs on Welsh Technical Standards Board</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Thu, 28 Mar 2019 14:00:00 +0000</lastBuildDate>
@@ -28,6 +28,15 @@
       <guid>https://standards.cymru/posts/2019-03-28-medications/</guid>
       <description>“When we set out to write software, we never know enough. Knowledge on the project is fragmented, scattered among many people and documents, and it’s mixed with other information so that we don’t even know which bits of knowledge we really need. Domains that seem less technically daunting can be deceiving: we don’t realize how much we don’t know. This ignorance leads us to make false assumptions.”
 Excerpt From: Eric Evans.</description>
+    </item>
+    
+    <item>
+      <title>Medication</title>
+      <link>https://standards.cymru/standards/medication/</link>
+      <pubDate>Thu, 28 Mar 2019 09:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/standards/medication/</guid>
+      <description>At the meeting of WTSB on 28th March 2019, we agreed that structured medication data should adopt the HL7 FHIR medication standards, with profiles aligned with the medication profiles from NHS England and INTEROpen. Further information can be found in the associated blog post from this meeting.</description>
     </item>
     
   </channel>

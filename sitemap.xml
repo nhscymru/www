@@ -8,6 +8,18 @@
   </url>
   
   <url>
+    <loc>https://standards.cymru/meetings/</loc>
+    <lastmod>2019-12-17T09:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/</loc>
+    <lastmod>2019-12-17T09:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://standards.cymru/meetings/2019-11-26/</loc>
     <lastmod>2019-11-26T09:30:00+00:00</lastmod>
   </url>
@@ -43,8 +55,25 @@
   </url>
   
   <url>
+    <loc>https://standards.cymru/posts/</loc>
+    <lastmod>2019-04-24T04:04:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/tags/</loc>
+    <lastmod>2019-04-24T04:04:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://standards.cymru/posts/2019-04-24-standards-culture/</loc>
     <lastmod>2019-04-24T04:04:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/tags/culture/</loc>
+    <lastmod>2019-04-24T04:04:04+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -58,8 +87,48 @@
   </url>
   
   <url>
+    <loc>https://standards.cymru/tags/drugs/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/tags/medication/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/tags/pharmacy/</loc>
+    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://standards.cymru/posts/2019-03-28-medications/</loc>
     <lastmod>2019-03-28T12:20:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/status/approved/</loc>
+    <lastmod>2019-03-28T09:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/standards/medication/</loc>
+    <lastmod>2019-03-28T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/standards/</loc>
+    <lastmod>2019-03-28T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/status/</loc>
+    <lastmod>2019-03-28T09:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -120,65 +189,6 @@
   <url>
     <loc>https://standards.cymru/posts/introducing-wtsb/</loc>
     <lastmod>2018-05-15T20:24:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/posts/</loc>
-    <lastmod>2019-04-24T04:04:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/status/approved/</loc>
-    <lastmod>2018-12-18T22:25:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/tags/culture/</loc>
-    <lastmod>2019-04-24T04:04:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/tags/drugs/</loc>
-    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/tags/medication/</loc>
-    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/meetings/</loc>
-    <lastmod>2019-12-17T09:30:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/tags/pharmacy/</loc>
-    <lastmod>2019-03-28T14:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/status/</loc>
-    <lastmod>2018-12-18T22:25:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/tags/</loc>
-    <lastmod>2019-04-24T04:04:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/</loc>
-    <lastmod>2019-12-17T09:30:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
