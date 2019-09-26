@@ -6,10 +6,21 @@
     <description>Recent content on Welsh Technical Standards Board</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 24 Apr 2019 04:04:04 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2019 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://standards.cymru/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The interdependencies and relationships between standards, architecture and governance</title>
+      <link>https://standards.cymru/posts/2019-06-27-working-in-open/</link>
+      <pubDate>Thu, 27 Jun 2019 17:00:00 +0000</pubDate>
+      
+      <guid>https://standards.cymru/posts/2019-06-27-working-in-open/</guid>
+      <description>Today we had the June meeting of the Welsh Technical Standards Board (WTSB). One of my core aims is openness and transparency, and debating the best ways to deliver what we want to achieve.
+These are my personal reflections rather than a formal opinion from WTSB. When possible, we also publish our more formal minutes.
+It&amp;rsquo;s really important to me that standards are not seen as an authoritarian, centrally-controlled didactic sets of commandments sent from on-high.</description>
+    </item>
     
     <item>
       <title>Using standards to change culture</title>
