@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Welsh Technical Standards Board  | Architectural principles</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+    
+      <link href="https://standards.cymru/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+      <link rel="stylesheet" href="https://standards.cymru/custom.css">
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Architectural principles" />
+<meta property="og:description" content="Today we held the October 2019 meeting of the Welsh Technical Standards Board. In our work plan, we had recognised the need to define some broad architectural principles which should apply to work within health and care in Wales. Ann Wrightson, head of information architecture at Aneurin Bevan Health Board, led this work and presented it at our September meeting, and today, we approved it.
+This is envisaged as a living document that will be updated over time to adapt and flex to our changing requirements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://standards.cymru/posts/2019-10-29-architectural-principles/" />
+<meta property="article:published_time" content="2019-10-20T10:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-10-20T10:00:00&#43;00:00"/><meta property="og:site_name" content="Welsh Technical Standards Board" />
+
+<meta itemprop="name" content="Architectural principles">
+<meta itemprop="description" content="Today we held the October 2019 meeting of the Welsh Technical Standards Board. In our work plan, we had recognised the need to define some broad architectural principles which should apply to work within health and care in Wales. Ann Wrightson, head of information architecture at Aneurin Bevan Health Board, led this work and presented it at our September meeting, and today, we approved it.
+This is envisaged as a living document that will be updated over time to adapt and flex to our changing requirements.">
+
+
+<meta itemprop="datePublished" content="2019-10-20T10:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-10-20T10:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3871">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Architectural principles"/>
+<meta name="twitter:description" content="Today we held the October 2019 meeting of the Welsh Technical Standards Board. In our work plan, we had recognised the need to define some broad architectural principles which should apply to work within health and care in Wales. Ann Wrightson, head of information architecture at Aneurin Bevan Health Board, led this work and presented it at our September meeting, and today, we approved it.
+This is envisaged as a living document that will be updated over time to adapt and flex to our changing requirements."/>
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97389603-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://standards.cymru" class="f3 fw2 hover-white no-underline white-90 dib">
+      Welsh Technical Standards Board
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://standards.cymru/posts/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://standards.cymru/meetings/" title="Meetings page">
+              Meetings
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://standards.cymru/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://twitter.com/NHSWalesTech" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/nhscymru/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        
+      </p>
+      <h1 class="f1 athelas mb1">Architectural principles</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-10-20T10:00:00Z">October 20, 2019</time>   
+         
+      <span class="f6 mv4 dib tracked">- by Dr Mark Wardle</span>
+      
+      
+      
+        <span class="f6 mv4 dib tracked"> - 19 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 3871 words</span>
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>Today we held the October 2019 meeting of the Welsh Technical Standards Board. In our work plan, we had recognised the need to define some broad architectural principles which should apply to work within health and care in Wales. Ann Wrightson, head of information architecture at Aneurin Bevan Health Board, led this work and presented it at our September meeting, and today, we approved it.</p>
+
+<p>This is envisaged as a living document that will be updated over time to adapt and flex to our changing requirements. Let us know what you think. It builds on the foundational work we have already agreed:</p>
+
+<ul>
+<li><a href="https://standards.cymru/posts/2018-06-19-wtsb">Adoption of the GDS standards</a></li>
+<li><a href="https://standards.cymru/posts/2018-06-19-wtsb">Adoption of the Welsh Government digital service standard</a></li>
+<li><a href="https://standards.cymru/posts/2018-12-01-wtsb">Publication of our design principles</a></li>
+</ul>
+
+<hr />
+
+<h1 id="introduction">Introduction</h1>
+
+<h2 id="scope-and-purpose">Scope and Purpose</h2>
+
+<p>This version is a draft in development of a WTSB Reference Architecture, prepared for peer review and input from colleagues.</p>
+
+<p>The purpose of the WTSB Reference Architecture is to provide a common architectural baseline that applies throughout the work of the WTSB, as a document adopted by the WTSB then cited rather than replicated in subsequent work.</p>
+
+<h2 id="background">Background</h2>
+
+<p>Initial work on a WTSB Reference Architecture was undertaken in response to positive impressions of similar work in Australia and NHS Scotland. This version is offered for peer review and input from colleagues in the context of the Digital Architecture Review.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>The content of the WTSB Reference Architecture is envisaged as:</p>
+
+<ul>
+<li>eHealth&amp;Care Architecture Principles (complete in draft in this version)</li>
+<li>High level Target Architecture</li>
+<li>Catalogue of roles and responsibilities</li>
+<li>Architecture Building Blocks</li>
+<li>Standardized patterns for other roles</li>
+<li>Appendices incorporating principles adopted by WTSB from UK and Welsh Government</li>
+</ul>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>As well as drawing on previous work in NHS Wales including the NHS Wales Digital Architecture Review (2019) , this work has drawn on (and in parts follows closely):</p>
+
+<ul>
+<li>the <a href="https://www.ehealth.scot/wp-content/uploads/documents/standard-architecture-principles1.pdf">eHealth Architecture Principles published by NHS Scotland (2009)</a></li>
+<li>the <a href="https://www.digitalhealth.gov.au/implementation-resources/ehealth-foundations/ehealth-architecture-principles">eHealth Architecture Principles and Interoperability Framework published by the National eHealth Transition Authority of Australia (NeHTA) (2012)</a></li>
+<li>the <a href="https://yhcr.org/wp-content/uploads/2019/05/YHCR-Interoperability-Cookbook-Abstract-v1.5.docx">Abstract of a Cookbook for Regional Interoperability in the Yorkshire &amp; Humber Local Health and Care Records Exemplar (2018)</a>.</li>
+</ul>
+
+<h1 id="ehealth-care-architecture-principles">eHealth&amp;Care Architecture Principles</h1>
+
+<p>Architecture principles are general rules and guidelines that inform and support designing, developing and implementing IT resources and assets and their configuration into digital solutions.</p>
+
+<p><em>Notes:</em></p>
+
+<p>‘Healthcare’ is used throughout as a compact expression denoting the scope of WTSB work across health and social care in Wales.  ‘eHealth&amp;Care’ is used similarly to denote the corresponding scope of information systems with their connectivity and platforms.</p>
+
+<p>Each principle is expressed as title, description, rationale and implications (similar to TOGAF)</p>
+
+<ul>
+<li><em>title</em>: the essence of the principle;</li>
+<li><em>description</em>: a succinct and unambiguous definition of the fundamental principle;</li>
+<li><em>rationale</em>: the business and clinical benefits of adhering to the principle;</li>
+<li><em>implications</em>: an outline of the key tasks, resources and potential costs associated with following the principle;</li>
+<li><em>supporting resources</em> are also cited where relevant.</li>
+</ul>
+
+<p>Implications and supporting resources in particular will require filling out as work proceeds on required standards and governance</p>
+
+<p><em>Method note</em>: The NHS Scotland principles have been used as a framework, &amp; adapted to WTSB context including the NHS Wales Digital Architecture review. Other sources were used as resources in this process.</p>
+
+<h2 id="1-adhering-to-the-ehealth-care-architecture-principles">1. Adhering to the eHealth&amp;Care Architecture Principles</h2>
+
+<h3 id="description">Description</h3>
+
+<p>NHS Wales Health Boards and Trusts, their partner organisations in delivering healthcare, and suppliers of healthcare systems and services used in Wales, all adhere to the eHealth&amp;Care Architecture Principles.</p>
+
+<h3 id="rationale">Rationale</h3>
+
+<p>Adherence to the eHealth&amp;Care Architecture Principles enables incremental and sustainable establishment of an improved architecture that has the security, reliability, flexibility and cost effectiveness necessary to achieve the benefits described in <a href="https://gov.wales/sites/default/files/publications/2019-04/in-brief-a-healthier-wales-our-plan-for-health-and-social-care.pdf">A Healthier Wales: our plan for health and social care (2018)</a>.</p>
+
+<h3 id="implications">Implications</h3>
+
+<p>An open digital architecture is equally about changing the interactions between the providers and consumers of systems and data. Achieving this requires alignment of operating model, governance, responsibilities and oversight, with clarity, simplicity and transparency throughout.</p>
+
+<p>Solution owners and technical, planning, commercial and policy leads work together to ensure that new solutions comply with the Principles and existing solutions become increasingly compliant through managed change.</p>
+
+<h3 id="supporting-resources">Supporting resources</h3>
+
+<h2 id="2-solutions-are-based-on-the-ehealth-care-reference-architecture">2. Solutions are based on the eHealth&amp;Care Reference Architecture</h2>
+
+<h3 id="description-1">Description</h3>
+
+<p>The eHealth&amp;Care Reference Architecture guides the design and delivery of all eHealth&amp;Care solutions.  Aligning with the Reference Architecture is the easy option.</p>
+
+<h3 id="rationale-1">Rationale</h3>
+
+<p>Undertaking design and delivery of eHealth&amp;Care solutions guided by the eHealth&amp;Care Reference Architecture allows us to make principled, sound decisions without revisiting the fundamentals of what we are trying to achieve.  By basing decisions on previously agreed Architecture Principles and Solution Architecture Patterns (such as defined system roles and responsibilities supported by standards) instead of working from first principles, we can make difficult decisions about architecture and solutions consistently, easier and faster.  Within and across the organisations in scope, a common Reference Architecture provides a set of widely understood decision making principles and a powerful technique to build a cohesive architecture of joined up information systems.</p>
+
+<h3 id="implications-1">Implications</h3>
+
+<p>A highly modular approach is key, with well defined roles, responsibilities and interfaces. It means that individual components can be stress-tested and monitored for performance independent of the whole, and enables Health Boards to integrate existing functionality into workflows.
+New programme and project solution architectures, nationally and in Health Boards, are explicitly aligned with the Reference Architecture. A degree of pragmatism with respect to existing investments is expected, however alignment is a high priority design goal and divergence must be justified and mitigated. This approach is strongly supported (technically and commercially) so that it is actually the easy option.</p>
+
+<p>Assets are designed for reuse across programmes and projects: this applies to specification, architecture and design assets, as well as software assets (tested modules) and code that is open for less formal reuse. Responsibilities for maintenance and support need to be clear and equitable.
+Existing solutions and programme and project architectures converge into alignment with the Reference Architecture, through managed change with increased alignment a consistent and high priority design goal.</p>
+
+<h3 id="supporting-resources-1">Supporting resources</h3>
+
+<ul>
+<li>The core eHealth&amp;Care Reference Architecture document (this document and successors)</li>
+<li>Supportive contracts and contract management with vendors supplying systems &amp; services.</li>
+<li>Steady development of further resources forming a comprehensive managed library of documentation and other resources (eg testing instances for standard services, code libraries)</li>
+<li>Networks of collaboration</li>
+</ul>
+
+<h2 id="3-the-architecture-supports-welsh-healthcare-organisational-structures">3. The architecture supports Welsh healthcare organisational structures</h2>
+
+<h3 id="description-2">Description</h3>
+
+<p>eHealth&amp;Care digital solutions support the organisational structure of healthcare in Wales, and enable innovation and legitimate variation in response to local clinical and business priorities.</p>
+
+<h3 id="rationale-2">Rationale</h3>
+
+<p>Healthcare organisations across Wales have their own priorities and delivery plans as well as joint programmes/projects with partner organisations, collaborative work, and shared aims. The actual eHealth&amp;Care architecture – the digital architecture as implemented – therefore needs to be supportive and enabling in this context.</p>
+
+<h3 id="implications-2">Implications</h3>
+
+<ul>
+<li><p>Solution architecture design gives high priority to organisational structures, staff capability and capacity, and the specific goals and boundaries of eHealth&amp;Care initiatives – whilst solution component and interface design gives high priority to reusing existing assets and services, designing for reuse, and use of standards.</p></li>
+
+<li><p>This is hard, and a particular challenge for achieving a coherent reference architecture and ubiquitous use of standards across a large and complex estate of information systems. It is much easier – and very counterproductive – for conformance to become a simple absolute design value and an end in itself, a ‘dead hand’. The next principle – Agility – provides for systematic mitigation of this issue.</p></li>
+</ul>
+
+<h3 id="supporting-resources-2">Supporting resources</h3>
+
+<h2 id="4-agile-architecture-and-solutions">4. Agile architecture and solutions</h2>
+
+<h3 id="description-3">Description</h3>
+
+<p>eHealth&amp;Care digital solutions across Wales have a high proportion of reused and reusable components and services, and provide good support for innovation and business change because it is easy to do new things in much the same way as existing things.</p>
+
+<h3 id="rationale-3">Rationale</h3>
+
+<p>Architecture and design that expects and enables future change reduces the cost and risk of implementing new solutions.</p>
+
+<p>The ability to scale, extend, upgrade and reconfigure a solution architecture means that the solution can support changing business and clinical priorities in a cost-effective manner, and also support innovation. Agile architectures have a high proportion of reusable components and services, and provide an environment (eg platform services, codes of connection, and interoperability standards) where it is easy to do new things in much the same way as existing things.  (Agility in architecture is not the same as ‘Agile’ development, though the two work well together.)</p>
+
+<h3 id="implications-3">Implications</h3>
+
+<ul>
+<li><p>The eHealth&amp;Care Reference Architecture, programme and project solution architectures, architecture components and interface standards are designed for agility (for architecture components and interface standards this is a higher bar than ‘reuse’). This involves a discipline of simplicity, separation of concerns and loose coupling.</p></li>
+
+<li><p>Loose coupling describes connectivity between systems where no ‘insider knowledge’ is needed to interoperate effectively.  For example, an interaction that requires both endpoints to ‘know’ a required sequence of states in a workflow is less loosely coupled than an interaction that communicates state explicitly.</p></li>
+
+<li><p>Governance and oversight must give high priority to design for agility.</p></li>
+</ul>
+
+<h3 id="supporting-resources-3">Supporting resources</h3>
+
+<h2 id="5-complying-with-standards">5. Complying with standards</h2>
+
+<h3 id="description-4">Description</h3>
+
+<p>eHealth&amp;Care solutions, architecture components and interfaces throughout healthcare in Wales ‘play by the rules’ i.e. use standards formally published and adopted for Wales where applicable, with a strong presumption in favour of open standards generally.</p>
+
+<h3 id="rationale-4">Rationale</h3>
+
+<p>Complying with standards and, in particular, open standards, helps to maximise return on investment and minimise costs.</p>
+
+<p>Lack of standards or use of proprietary standards (such as interface specifications developed by suppliers) increases the risk of excessive integration complexity and costs.</p>
+
+<p>Open standards, developed with rigorous community governance and selected and implemented with care, simplify the integration of solutions, make it easier to replace components with equivalents from another source, and so help reduce whole lifetime costs and risks of a solution deployed within a managed architecture.</p>
+
+<h3 id="supporting-resources-4">Supporting resources</h3>
+
+<ul>
+<li>A library of specific standards for Wales, guidance on using other open standards, and implementation support, that is kept up to date and fit for purpose.</li>
+<li>Processes and resources to adopt, adapt or develop new standards as required.</li>
+<li>Governance processes and practical support to make compliance the easy option.</li>
+</ul>
+
+<h2 id="6-use-and-adapt-pre-existing-national-and-local-assets">6. Use and adapt pre-existing national and local assets</h2>
+
+<h3 id="description-5">Description</h3>
+
+<p>Architecture components from the existing Health Informatics architecture in NHS Wales should be used, gaining benefits from existing investment; converge existing components into alignment with the Reference Architecture through managed change.</p>
+
+<h3 id="rationale-5">Rationale</h3>
+
+<p>The existing Health Informatics architecture in NHS Wales provides a range of useful and reusable services as well as representing considerable investment. Progressive managed change will converge National systems and services into an open platform; Health Boards will benefit from tracking these developments and integrating national services into their workflows.  Aligning local assets with the Reference Architecture provides a sound basis for collaborative innovation, and promotes a more open and competitive market for healthcare IT systems and services in Wales.</p>
+
+<h3 id="implications-4">Implications</h3>
+
+<ul>
+<li>Existing components with sustainable value will converge into alignment with the Reference Architecture, through managed change with increased alignment a consistent and high priority design goal.</li>
+<li>The capabilities of existing national and local applications are considered when designing solutions to meet new business and clinical requirements; managed change with increased alignment will form part of realizing such solutions until alignment is fully achieved.</li>
+</ul>
+
+<h3 id="supporting-resources-5">Supporting resources</h3>
+
+<ul>
+<li>eHealth&amp;Care Reference Architecture</li>
+<li>Standards such as interface specifications and codes of connection</li>
+</ul>
+
+<h2 id="7-information-is-governed">7. Information is governed</h2>
+
+<h3 id="description-6">Description</h3>
+
+<p>eHealth&amp;Care solutions adhere to NHS Wales’ standards for Information Governance.
+(Specific considerations for accessibility and security are detailed in separate principles below.)</p>
+
+<h3 id="rationale-6">Rationale</h3>
+
+<p>Patients entrust NHS Wales and partner organisations with personal information in the expectation that it will be stored securely and accessed when required for legitimate purposes. Robust information governance is key to enabling solutions to reach their full potential. Legislation and policy applies.</p>
+
+<h3 id="implications-5">Implications</h3>
+
+<ul>
+<li>Information governance is a core perspective in architecture design.</li>
+<li>Information governance professionals are core stakeholders in developing solution concepts and detailed architectures.</li>
+</ul>
+
+<h3 id="supporting-resources-6">Supporting resources</h3>
+
+<ul>
+<li>Advice and guidance from Information Governance professionals, both national and local
+Guidance documentation provided locally and nationally</li>
+</ul>
+
+<h2 id="8-information-is-accessible">8. Information is accessible</h2>
+
+<h3 id="description-7">Description</h3>
+
+<p>Information held in or managed by eHealth&amp;Care solutions is made available to authorised individuals and for processing by authorised applications, through any authorised channel and at any place and time where healthcare is delivered.</p>
+
+<h3 id="rationale-7">Rationale</h3>
+
+<p>Safe, efficient and effective decision making, either clinical, administrative, or managerial, is directly dependent on the availability and accessibility of information, and therefore systems storing or managing information make that information readily available to authorised (identified, authenticated) individuals and applications. This includes facilitating the sharing of health information with patients, carers and service users.</p>
+
+<h3 id="implications-6">Implications</h3>
+
+<ul>
+<li>eHealth&amp;Care solutions enable access to stored information and also enable appropriate controls on access</li>
+
+<li><p>Within appropriate governance and without further hindrance:</p>
+
+<ul>
+<li>Clinical information held in one system can be brought out of that system into a different system (such as but not limited to the CDR) without loss of meaning or ability to analyse the data</li>
+<li>Operational and management data held in one system can be brought out of that system into a different system (such as a BI facility) without loss of meaning or ability to analyse the data</li>
+<li>eHealth&amp;Care architecture and solutions enable near-real-time access to operational and management data, irrespective of how the data is collected and stored</li>
+<li>eHealth&amp;Care architecture and solutions enable near-real-time access to clinical data, irrespective of how the data is collected and stored</li>
+<li>eHealth&amp;Care architecture and solutions support the sharing of information with the Welsh Government, local authorities, &amp; other organisations</li>
+</ul></li>
+</ul>
+
+<h3 id="supporting-resources-7">Supporting resources</h3>
+
+<h2 id="9-information-represented-as-data-requires-metadata">9. Information represented as data requires metadata</h2>
+
+<h3 id="description-8">Description</h3>
+
+<p>When information is represented as data in eHealth&amp;Care solutions, a data value requires metadata such as a unit of measure, the meaning of the value, provenance (where created, when and by whom) and context (created for what purpose and/or what business context). This is especially important for patient and service user information.</p>
+
+<h3 id="rationale-8">Rationale</h3>
+
+<p>Safe, efficient and effective decision making is directly dependent on the ability of the decision maker to have confidence in, and where necessary to appraise the relevance and accuracy of, the information used in making the decision.</p>
+
+<p>Recording clinical information intrinsically involves recording much more than bare data values.
+For example, a numeric data value (e.g. the number 8.3) only makes sense as clinical information in the context of a unit of measure (e.g. kg), the meaning of the value (e.g. body weight), provenance and context (e.g. as part of a standard set of observations recorded by a qualified practitioner in some community baby clinic on such a date).</p>
+
+<p>When recording on paper much of this is implicit or readily visible (eg a particular kind of form is used; ‘Weight‘ and ‘kg’ are preprinted on the form used in the clinic; the whole form is dated and signed by the practitioner who completed it).</p>
+
+<p>The data value ‘8.3’ cannot be reused safely and meaningfully without also recording and reusing the metadata (unit of measure, meaning, provenance and context).</p>
+
+<p>Without careful analysis and incorporation of metadata, digital recording of clinical information is at risk of losing data attributes and contextual information that are essential for safe and veridical reuse of the information. (For clarity, this is in addition to other patient safety related data management essentials such as associating patient information with the right patient.)</p>
+
+<h3 id="implications-7">Implications</h3>
+
+<ul>
+<li>eHealth&amp;Care solutions ensure that information represented as data includes or is robustly associated with requisite metadata.</li>
+<li>In particular, this applies to situations where clinical information held in one system is brought out of that system into a different system (such as but not limited to the CDR).</li>
+<li>eHealth&amp;Care solution design and implementation decisions that have the effect of reusing or transferring data with loss of context are scrutinised from a clinical informatics perspective.</li>
+<li>This scrutiny is embedded as routine in clinical safety assurance of eHealth&amp;Care solutions.</li>
+<li>Where relevant, caveats are applied to transferred datasets, to ensure their limitations are known and respected.</li>
+</ul>
+
+<h3 id="supporting-resources-8">Supporting resources</h3>
+
+<h2 id="10-information-is-secure">10. Information is secure</h2>
+
+<h3 id="description-9">Description</h3>
+
+<p>Information held in eHealth&amp;Care architecture and solutions is secured against unauthorised access, modification or loss. A common methodology is applied, based on risk.</p>
+
+<h3 id="rationale-9">Rationale</h3>
+
+<p>Security against unauthorised access, modification or loss is a regulatory requirement for patient information and other information held in confidence, and good practice for other information assets. A common methodology and a risk based approach enable cost effective measures across the eHealth&amp;Care architecture, with security measures aligned with architecture principles and implemented solution architectures.</p>
+
+<h3 id="implications-8">Implications</h3>
+
+<ul>
+<li>eHealth&amp;Care solution architectures and implementations follow a common approach to information security risks within their risk management protocol, comply with national and local policy, adopt best practice to mitigate identified risks, and obtain expert advice as required.</li>
+</ul>
+
+<h3 id="supporting-resources-9">Supporting resources</h3>
+
+<h2 id="11-common-vocabulary-and-data-definitions">11. Common vocabulary and data definitions</h2>
+
+<h3 id="description-10">Description</h3>
+
+<p>Data is defined consistently across eHealth&amp;Care solutions. Various reference data is managed locally and nationally as appropriate and made available as services to all solutions that need it. Data definitions are available to system users, and to designers and developers, for reference. Data definitions are developed and sustained collaboratively as shared architecture assets.</p>
+
+<h3 id="rationale-10">Rationale</h3>
+
+<p>Common vocabulary and data definitions are required to ensure that data collected in different systems is comparable for reuse and analysis. This includes clinical point of care information as well as information required for operational management and for clinical purposes other than direct patient care, for example healthcare planning, public health, clinical audit, research and clinical governance.</p>
+
+<p>A common understanding of concepts embodied in terminologies and data definitions is key to interoperability. Terminologies and data definitions capture the meaning and structure of shared information and thus must be shared and accepted in the community where they are used.</p>
+
+<h3 id="implications-9">Implications</h3>
+
+<ul>
+<li>eHealth&amp;Care solution architectures make use of national and local data standards to ensure that the end to end integrity of clinical meaning and operational relevance is maintained.</li>
+<li>All operational services must identify the terminology and/or data definitions associated with the information provided or received through the service, and make this information available appropriately for use both at design time for solutions using the services, and (concisely and as appropriate) within the data during operation.</li>
+<li>Standardised terminologies and data definitions are adopted and developed with open, consultative community process and published for use by any eHealth&amp;Care solution, using standard identification schemes.</li>
+</ul>
+
+<h3 id="supporting-resources-10">Supporting resources</h3>
+
+<h2 id="12-applications-are-easy-to-use-and-safe-in-use">12. Applications are easy to use and safe in use</h2>
+
+<h3 id="description-11">Description</h3>
+
+<p>An application (or a set of applications used together) is easy to use and to learn to use, providing fluent support of users’ work. Aspects of usability relevant to patient safety are subject to formal clinical safety assurance.</p>
+
+<p>Consistent presentation of applications and information to end-users is ideal, though subject to trade-off with principle 13](#13-ehealth-care-solution-components-come-from-various-sources).</p>
+
+<h3 id="rationale-11">Rationale</h3>
+
+<p>Applications that are easy to use and to learn to use and provide a fluent user experience enable users to be more self-sufficient, reduce user errors, improve efficiency, foster a positive attitude to eHealth&amp;Care solutions, and reduce the need for formal training.</p>
+
+<h3 id="implications-10">Implications</h3>
+
+<ul>
+<li>When designing solutions, due consideration is given to measures such as single sign-on, sharing patient context across applications, and using a portal to combine different information sources and functionality into a fluent user experience (see <a href="#14-open-platform-underpinned-by-technical-and-information-standards">principle 14</a> for technical implications).</li>
+<li>Buy-or-build decisions (see <a href="#13-ehealth-care-solution-components-come-from-various-sources">principle 13</a>) pay due regard to usability of 3rd party applications and their ability to contribute to an integrated user experience.</li>
+<li>Clinical safety assurance including hazard analysis of user experience is an ongoing requirement for sustaining clinical solutions.</li>
+</ul>
+
+<h2 id="13-ehealth-care-solution-components-come-from-various-sources">13. eHealth&amp;Care solution components come from various sources</h2>
+
+<h3 id="description-12">Description</h3>
+
+<p>The eHealth&amp;Care architecture principles apply equally to solutions and architecture components from any source.  There is a presumption in favour of making best use of services and Architectural Building Blocks provided in the Open NHS Wales Platform, and in favour of continuing to derive benefit from previous investments by adapting existing systems and services to use emerging standards. Within this context, there is no architectural presumption for or against deciding to buy a commercial product, develop in-house, or use an open source solution.</p>
+
+<h3 id="rationale-12">Rationale</h3>
+
+<p>Developing shared assets as an Open NHS Wales Platform (see <a href="#14-open-platform-underpinned-by-technical-and-information-standards">principle 14</a>) is an architecture strategy and pattern supported and enabled by the eHealth&amp;Care Reference Architecture.</p>
+
+<p>Buy-or-build and similar trade-offs for specific solutions are often dependent on matters specific to a programme or project, and so not properly the subject of an architecture principle for the whole of eHealth&amp;Care.  Stakeholders are expected to make economically rational decisions taking into account whole-of-life costs of new capability, potential for widening the user base through the open platform, and total cost of ownership.</p>
+
+<h3 id="implications-11">Implications</h3>
+
+<p>Programmes and projects will make their own decisions on how to acquire new architecture components, while also being responsible for ensuring that their solution architectures as a whole are aligned with the eHealth&amp;Care Reference Architecture and applicable standards.</p>
+
+<h3 id="supporting-resources-11">Supporting resources</h3>
+
+<h2 id="14-open-platform-underpinned-by-technical-and-information-standards">14. Open platform underpinned by technical and information standards</h2>
+
+<h3 id="description-13">Description</h3>
+
+<p>Digital channels, system and applications, whether national or local, “play by the rules” i.e. work within a common framework of technical and information standards.  Strongly controlled national platforms maintain and protect the “single version of the truth” and provide a robust and resilient means of access for authorised health and social care professionals wherever they are in the system.</p>
+
+<h3 id="rationale-13">Rationale</h3>
+
+<p>Pervasive national and local use of standards enables freedom of choice, provides opportunities to innovate and allows digital applications to evolve and respond to a dynamic and changing health and social care landscape.</p>
+
+<h3 id="implications-12">Implications</h3>
+
+<ul>
+<li>Collaborative approach with effective governance, to support and ensure an open platform approach with pervasive use of standards.</li>
+<li>Effective process and supporting human and digital resources for adoption, adaptation, development and dissemination of technical and information standards.</li>
+</ul>
+
+<h3 id="supporting-resources-12">Supporting resources</h3>
+
+<h2 id="15-solutions-and-services-are-designed-to-meet-their-level-of-clinical-and-business-criticality">15. Solutions and services are designed to meet their level of clinical and business criticality</h2>
+
+<h3 id="description-14">Description</h3>
+
+<p>The level of criticality and required availability for each solution and service is known and kept under review, with risk based management through their active life.</p>
+
+<h3 id="rationale-14">Rationale</h3>
+
+<p>Many eHealth&amp;Care solutions are required to be highly available to support critical clinical and operational processes.</p>
+
+<h3 id="implications-13">Implications</h3>
+
+<ul>
+<li>Solutions are designed with due regard to the criticality of the clinical and/or operational services that they support.</li>
+<li>Components are designed with known (and documented) characteristics regarding reuse in highly available and resilient services.</li>
+<li>Core services are designed and sustained to achieve and maintain high availability as their capacity and load increases, and as technology develops.</li>
+<li>Business continuity and disaster recovery are given due weight in solution architecture and application design.</li>
+</ul>
+
+<h3 id="supporting-resources-13">Supporting resources</h3>
+
+<h2 id="16-comply-with-legislative-and-policy-requirements">16. Comply with legislative and policy requirements</h2>
+
+<h3 id="description-15">Description</h3>
+
+<p>eHealth&amp;Care solutions comply with applicable legislation and policies in all organisations within which they operate, and enable their users to comply with applicable professional standards and codes of practice.</p>
+
+<h3 id="rationale-15">Rationale</h3>
+
+<p>eHealth&amp;Care operates in a complex legislative and policy environment including regulations and codes of practice that determine how individuals&rsquo; health &amp; care information must be handled.</p>
+
+<p>In addition to meeting their legal obligations, healthcare providers must comply with professional standards and ethical codes in areas such as protecting the confidentiality of individuals’ health information, retention of health records, and ensuring the security of health information systems.</p>
+
+<p>The development, implementation and use of eHealth&amp;Care solutions must support compliance with applicable legislation, professional standards and ethical codes.</p>
+
+<h3 id="implications-14">Implications</h3>
+
+<ul>
+<li>Applicable legislative, policy and professional practice requirements are explicitly identified for all eHealth solutions and infrastructure, and are reviewed regularly to reflect changes in legislation and policy.</li>
+<li>For sustainability, policy requirements should be expressed in terms of obligations, permissions, prohibitions, outcomes and performance requirements, rather than prescribing implementation mechanisms.<br /></li>
+</ul>
+
+<h3 id="supporting-resources-14">Supporting resources</h3>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+  
+  
+    <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+      <p class="f5 b mb3">What&#39;s in this post</p>
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#scope-and-purpose">Scope and Purpose</a></li>
+<li><a href="#background">Background</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul></li>
+<li><a href="#ehealth-care-architecture-principles">eHealth&amp;Care Architecture Principles</a>
+<ul>
+<li><a href="#1-adhering-to-the-ehealth-care-architecture-principles">1. Adhering to the eHealth&amp;Care Architecture Principles</a>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#rationale">Rationale</a></li>
+<li><a href="#implications">Implications</a></li>
+<li><a href="#supporting-resources">Supporting resources</a></li>
+</ul></li>
+<li><a href="#2-solutions-are-based-on-the-ehealth-care-reference-architecture">2. Solutions are based on the eHealth&amp;Care Reference Architecture</a>
+<ul>
+<li><a href="#description-1">Description</a></li>
+<li><a href="#rationale-1">Rationale</a></li>
+<li><a href="#implications-1">Implications</a></li>
+<li><a href="#supporting-resources-1">Supporting resources</a></li>
+</ul></li>
+<li><a href="#3-the-architecture-supports-welsh-healthcare-organisational-structures">3. The architecture supports Welsh healthcare organisational structures</a>
+<ul>
+<li><a href="#description-2">Description</a></li>
+<li><a href="#rationale-2">Rationale</a></li>
+<li><a href="#implications-2">Implications</a></li>
+<li><a href="#supporting-resources-2">Supporting resources</a></li>
+</ul></li>
+<li><a href="#4-agile-architecture-and-solutions">4. Agile architecture and solutions</a>
+<ul>
+<li><a href="#description-3">Description</a></li>
+<li><a href="#rationale-3">Rationale</a></li>
+<li><a href="#implications-3">Implications</a></li>
+<li><a href="#supporting-resources-3">Supporting resources</a></li>
+</ul></li>
+<li><a href="#5-complying-with-standards">5. Complying with standards</a>
+<ul>
+<li><a href="#description-4">Description</a></li>
+<li><a href="#rationale-4">Rationale</a></li>
+<li><a href="#supporting-resources-4">Supporting resources</a></li>
+</ul></li>
+<li><a href="#6-use-and-adapt-pre-existing-national-and-local-assets">6. Use and adapt pre-existing national and local assets</a>
+<ul>
+<li><a href="#description-5">Description</a></li>
+<li><a href="#rationale-5">Rationale</a></li>
+<li><a href="#implications-4">Implications</a></li>
+<li><a href="#supporting-resources-5">Supporting resources</a></li>
+</ul></li>
+<li><a href="#7-information-is-governed">7. Information is governed</a>
+<ul>
+<li><a href="#description-6">Description</a></li>
+<li><a href="#rationale-6">Rationale</a></li>
+<li><a href="#implications-5">Implications</a></li>
+<li><a href="#supporting-resources-6">Supporting resources</a></li>
+</ul></li>
+<li><a href="#8-information-is-accessible">8. Information is accessible</a>
+<ul>
+<li><a href="#description-7">Description</a></li>
+<li><a href="#rationale-7">Rationale</a></li>
+<li><a href="#implications-6">Implications</a></li>
+<li><a href="#supporting-resources-7">Supporting resources</a></li>
+</ul></li>
+<li><a href="#9-information-represented-as-data-requires-metadata">9. Information represented as data requires metadata</a>
+<ul>
+<li><a href="#description-8">Description</a></li>
+<li><a href="#rationale-8">Rationale</a></li>
+<li><a href="#implications-7">Implications</a></li>
+<li><a href="#supporting-resources-8">Supporting resources</a></li>
+</ul></li>
+<li><a href="#10-information-is-secure">10. Information is secure</a>
+<ul>
+<li><a href="#description-9">Description</a></li>
+<li><a href="#rationale-9">Rationale</a></li>
+<li><a href="#implications-8">Implications</a></li>
+<li><a href="#supporting-resources-9">Supporting resources</a></li>
+</ul></li>
+<li><a href="#11-common-vocabulary-and-data-definitions">11. Common vocabulary and data definitions</a>
+<ul>
+<li><a href="#description-10">Description</a></li>
+<li><a href="#rationale-10">Rationale</a></li>
+<li><a href="#implications-9">Implications</a></li>
+<li><a href="#supporting-resources-10">Supporting resources</a></li>
+</ul></li>
+<li><a href="#12-applications-are-easy-to-use-and-safe-in-use">12. Applications are easy to use and safe in use</a>
+<ul>
+<li><a href="#description-11">Description</a></li>
+<li><a href="#rationale-11">Rationale</a></li>
+<li><a href="#implications-10">Implications</a></li>
+</ul></li>
+<li><a href="#13-ehealth-care-solution-components-come-from-various-sources">13. eHealth&amp;Care solution components come from various sources</a>
+<ul>
+<li><a href="#description-12">Description</a></li>
+<li><a href="#rationale-12">Rationale</a></li>
+<li><a href="#implications-11">Implications</a></li>
+<li><a href="#supporting-resources-11">Supporting resources</a></li>
+</ul></li>
+<li><a href="#14-open-platform-underpinned-by-technical-and-information-standards">14. Open platform underpinned by technical and information standards</a>
+<ul>
+<li><a href="#description-13">Description</a></li>
+<li><a href="#rationale-13">Rationale</a></li>
+<li><a href="#implications-12">Implications</a></li>
+<li><a href="#supporting-resources-12">Supporting resources</a></li>
+</ul></li>
+<li><a href="#15-solutions-and-services-are-designed-to-meet-their-level-of-clinical-and-business-criticality">15. Solutions and services are designed to meet their level of clinical and business criticality</a>
+<ul>
+<li><a href="#description-14">Description</a></li>
+<li><a href="#rationale-14">Rationale</a></li>
+<li><a href="#implications-13">Implications</a></li>
+<li><a href="#supporting-resources-13">Supporting resources</a></li>
+</ul></li>
+<li><a href="#16-comply-with-legislative-and-policy-requirements">16. Comply with legislative and policy requirements</a>
+<ul>
+<li><a href="#description-15">Description</a></li>
+<li><a href="#rationale-15">Rationale</a></li>
+<li><a href="#implications-14">Implications</a></li>
+<li><a href="#supporting-resources-14">Supporting resources</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+  
+  
+  
+  
+    <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+      <p class="f5 b mb3">Related</p>
+      <ul class="pa0 list">
+         
+           <li  class="mb2">
+            <a href="https://standards.cymru/posts/2019-06-27-working-in-open/">The interdependencies and relationships between standards, architecture and governance</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/posts/2019-04-24-standards-culture/">Using standards to change culture</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/posts/2019-03-28-medications/">Modelling medications</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/standards/medication/">Medication</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-02-26/">Statement of intent, community integration and work plans</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-12-17/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-11-26/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-08-27/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-10-29/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-07-23/"></a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-09-24/">Demographics, architecture, appointments and scheduling</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-03-28/">Electronic prescribing standards and statement of principles sign-off</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-05-30/">Focusing on developers</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-06-27/">The triumvate of standards, governance and architecture - interdependencies and relationships</a>
+          </li>
+          
+           <li  class="mb2">
+            <a href="https://standards.cymru/meetings/2019-04-18/index./">Virtual meeting to draft letter following statement of principles</a>
+          </li>
+          
+      </ul>
+  </div>
+  
+  </aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://standards.cymru" >
+    &copy; 2019 Maintained by Mark Wardle for the Welsh Technical Standards Board
+  </a>
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="mailto:mark@wardle.org">
+    mark@wardle.org
+  </a>
+    <div>
+      
+
+
+
+<a href="https://twitter.com/NHSWalesTech" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/nhscymru/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+    </div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://standards.cymru/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

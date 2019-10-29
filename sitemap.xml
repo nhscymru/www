@@ -30,6 +30,28 @@
   </url>
   
   <url>
+    <loc>https://standards.cymru/posts/</loc>
+    <lastmod>2019-10-20T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/status/approved/</loc>
+    <lastmod>2019-10-20T10:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/posts/2019-10-29-architectural-principles/</loc>
+    <lastmod>2019-10-20T10:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://standards.cymru/status/</loc>
+    <lastmod>2019-10-20T10:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://standards.cymru/meetings/2019-09-24/</loc>
     <lastmod>2019-09-24T09:30:00+00:00</lastmod>
   </url>
@@ -37,11 +59,6 @@
   <url>
     <loc>https://standards.cymru/meetings/2019-08-27/</loc>
     <lastmod>2019-08-27T09:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/posts/</loc>
-    <lastmod>2019-06-27T17:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -115,12 +132,6 @@
   </url>
   
   <url>
-    <loc>https://standards.cymru/status/approved/</loc>
-    <lastmod>2019-03-28T09:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://standards.cymru/standards/medication/</loc>
     <lastmod>2019-03-28T09:00:00+00:00</lastmod>
   </url>
@@ -128,12 +139,6 @@
   <url>
     <loc>https://standards.cymru/standards/</loc>
     <lastmod>2019-03-28T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://standards.cymru/status/</loc>
-    <lastmod>2019-03-28T09:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
